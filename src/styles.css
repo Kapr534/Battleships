@@ -1,0 +1,29 @@
+html, body {
+    margin: 0;
+    height: 100vh;
+    background: #989898;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.battleships {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+/* Game */
+.gameTable {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.cell {
+
+}
