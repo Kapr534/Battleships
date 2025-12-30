@@ -90,3 +90,11 @@ html, body {
 .nahodne-rozestaveni-lodi:hover {
     background-color: #4494a5;
 }
+
+.mouse-enter-fail {
+    background-color: #ff7676;
+}
+
+.mouse-enter {
+    background-color: darkseagreen;
+}

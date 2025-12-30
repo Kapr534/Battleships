@@ -83,34 +83,6 @@ export class Gameboard {
         }
     }
 
-    // getShip(cords) {
-    //     if (cords[0] === undefined|| cords[1] === undefined) throw new Error("Špatné souřadnice");
-    //     const x = cords[0];
-    //     const y = cords[1];
-    //     return this.gameBoard[x][y].ship;
-    // }
-
-    showGameBoard() {
-        let output = "";
-        for (let y = 9; y >= 0; y--) {
-
-            output += y + " ";
-            for (let x = 0; x < 10; x++) {
-                const cell = this.gameBoard[x][y];
-
-                if (cell.ship === null) {
-                    output += ". ";
-                } else {
-                    output += "S ";
-                }
-            }
-            output += "\n";
-        }
-        output += "  0 1 2 3 4 5 6 7 8 9";
-
-        return output;
-    }
-
 }
 
 export class Player {

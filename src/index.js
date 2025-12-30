@@ -6,12 +6,17 @@ import {createUI, controlBtnsOnClick} from "./dom";
 function resetGame() {
     player = new Player();
     bot = new Player();
+    canPlaceBoats = true;
     bot.randomBoatPlacement();
-    playerOnTheMove = true;
-    isGameOver = false
+    shipsToPlace = [... player.ships];
 
     renderGame();
-    controlBtnsOnClick(resetGame, player, renderGame);
+    controlBtnsOnClick(resetGame, player, renderGame, startGame, changeCanPlaceBoats);
+}
+
+function startGame() {
+    playerOnTheMove = true;
+    isGameOver = false
 }
 
 function playerAttack(cords) {
@@ -43,24 +48,30 @@ function playerAttack(cords) {
 }
 
 function renderGame () {
-    createUI(player.gameBoard, () => {}, "player-game", true);
-    createUI(bot.gameBoard, playerAttack, "bot-game", false);
+    createUI(player.gameBoard, () => {}, "player-game", true, startGame, shipsToPlace, axis, renderGame, canPlaceBoats);
+    createUI(bot.gameBoard, playerAttack, "bot-game", false, startGame, shipsToPlace, axis, renderGame, canPlaceBoats);
 }
 
+function changeCanPlaceBoats() {
+    canPlaceBoats = false;
+    shipsToPlace = [];
+}
 
-// let axis = "x";
-// document.addEventListener("contextmenu", (e) => {
-//     e.preventDefault();
-//     axis = axis === "x" ? "y" : "x";
-//     console.log(axis)
-// });
+let axis = "x";
+document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    axis = axis === "x" ? "y" : "x";
+    createUI(player.gameBoard, () => {}, "player-game", true, startGame, shipsToPlace, axis, renderGame, canPlaceBoats);
+});
 
 let player = new Player();
 let bot = new Player();
 bot.randomBoatPlacement();
 let playerOnTheMove = true;
 let isGameOver = false;
+let canPlaceBoats = true;
+let shipsToPlace = [... player.ships];
 
-controlBtnsOnClick(resetGame, player, renderGame);
+controlBtnsOnClick(resetGame, player, renderGame, startGame, changeCanPlaceBoats);
 
 renderGame();
