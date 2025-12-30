@@ -9,7 +9,7 @@ module.exports = {
     },
     devServer: {
         static: './dist',
-        port: 8084,
+        port: 8081,
         open: true,
         hot: true,
     },
