@@ -3,7 +3,7 @@
 ![App Screenshot](./public/app.png)
 
 ##  Live Demo
-👉 **[Investiční kalkulačka]((https://battleships-kapr534.vercel.app/))**
+👉 **[Battleships]((https://battleships-kapr534.vercel.app/))**
 ## Použité Technologie
 
 * **JavaScript(ES6)**
