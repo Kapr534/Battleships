@@ -7,6 +7,7 @@
 ## Použité Technologie
 
 * **JavaScript(ES6)**
+* **Webpack**
 * **Jest** 
 * **CSS**
 
