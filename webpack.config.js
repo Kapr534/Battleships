@@ -1,6 +1,7 @@
-const path = require('path');
+import * as path from "node:path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-module.exports = {
+export default {
     mode: 'development',
     entry: './src/index.js',
     output: {
@@ -14,6 +15,12 @@ module.exports = {
         hot: true,
     },
     module: {
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: './src/index.html',
+                title: 'Battleship',
+            }),
+        ],
         rules: [
             {
                 test: /\.css$/i,
