@@ -11,7 +11,6 @@
 * **CSS**
 
 📂 Struktura projektu
-Architektura je rozdělena podle funkcionality pro lepší škálovatelnost.
 
 ```
 src/
